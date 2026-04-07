@@ -22,12 +22,12 @@ apis:
       directories and marketplaces.
 name: API Stack
 tags:
-  - Directory
-  - Discovery
-  - API Tools
+  - API Design
   - API Gateways
   - API Management
-  - API Design
+  - API Tools
+  - Directory
+  - Discovery
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
