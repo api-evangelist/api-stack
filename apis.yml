@@ -46,6 +46,8 @@ apis:
       - type: Categories
         url: https://www.apistack.io/categories/all
 common:
+  - type: GitHubOrganization
+    url: https://github.com/api-stack
   - type: Website
     url: https://www.apistack.io/
   - type: Categories
