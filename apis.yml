@@ -7,7 +7,7 @@ description: >-
   specifications, testing, security, monitoring, and marketplaces, helping
   developers discover and evaluate the right API tooling for their needs.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - API Design
   - API Directory
