@@ -60,7 +60,7 @@ common:
     url: https://www.apistack.io/category/api-design
   - type: APIAuthentication
     url: https://www.apistack.io/category/api-authentication
-  - type: DeveloperDocumentation
+  - type: Documentation
     url: https://www.apistack.io/category/developer-documentation
   - type: APIDirectories
     url: https://www.apistack.io/category/directories
