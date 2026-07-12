@@ -46,6 +46,8 @@ apis:
       - type: Categories
         url: https://www.apistack.io/categories/all
 common:
+  - type: DomainSecurity
+    url: security/api-stack-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/api-stack
   - type: Website
