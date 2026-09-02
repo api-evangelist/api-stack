@@ -1,0 +1,33 @@
+generated: '2026-09-02'
+method: searched
+source: >-
+  registry.npmjs.org search, pypi.org, rubygems.org and crates.io metadata endpoints,
+  plus the apistack.io site chrome and sitemap (268 URLs, no SDK or developer page)
+note: >-
+  API Stack publishes no first-party client library in any public registry. Every registry
+  named below was queried unauthenticated on 2026-09-02 and returned no API Stack package.
+  The @apideck/* family on npm (@apideck/node, @apideck/unify, @apideck/vault-js,
+  @apideck/mcp and others) belongs to Apideck's Unify/Vault products, NOT to the API Stack
+  directory, and is catalogued under all/apideck - it is deliberately not claimed here.
+package_count: 0
+packages: []
+registries_probed:
+  - registry: npm
+    query: apistack
+    result: no first-party package
+    checked: '2026-09-02'
+  - registry: pypi
+    query: apistack, api-stack
+    result: 404 on both
+    checked: '2026-09-02'
+  - registry: rubygems
+    query: apistack
+    result: 404
+    checked: '2026-09-02'
+  - registry: crates.io
+    query: apistack
+    result: 404
+    checked: '2026-09-02'
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com

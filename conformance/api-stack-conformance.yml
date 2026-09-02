@@ -1,0 +1,91 @@
+generated: '2026-09-02'
+method: probed
+source: live HTTPS/DNS probes of www.apistack.io on 2026-09-02
+note: >-
+  API Stack publishes no machine-readable API contract of its own, so the API-standard
+  conformance rows below are all recorded as not-applicable rather than false. What CAN be
+  asserted from probes is the web-discovery surface the directory does serve. The
+  contract_discovery block records the one machine-readable endpoint found on the host and
+  why it is NOT attributed to API Stack.
+domain_standard:
+  applicable: false
+  note: >-
+    API Stack's market is API-tooling discovery. The nearest domain standard would be
+    APIs.json / an API catalog document; neither is served (see well-known/). No standard
+    is asserted, and per the reward-only rule none is invented.
+standards:
+  - id: sitemaps-org-0.9
+    conforms: true
+    evidence: >-
+      https://www.apistack.io/sitemap.xml returns 200 text/xml, a valid urlset with 268
+      <loc> entries (213 app pages, 46 category pages, 9 site pages)
+  - id: rfc9309-robots
+    conforms: true
+    evidence: >-
+      https://www.apistack.io/robots.txt returns 200 with User-agent/Allow/Disallow and a
+      Sitemap directive; /api and /partner are disallowed
+  - id: rfc6797-hsts
+    conforms: true
+    evidence: 'www.apistack.io returns Strict-Transport-Security with max-age=31536000'
+  - id: tls-1.3
+    conforms: true
+    evidence: 'TLSv1.3 negotiated on www.apistack.io (see security/api-stack-domain-security.yml)'
+  - id: rfc8615-well-known
+    conforms: false
+    evidence: 'every named /.well-known/ path 404s or is edge-blocked (see well-known/api-stack-well-known.yml)'
+  - id: rfc9116-security-txt
+    conforms: false
+    evidence: '/.well-known/security.txt returns the host-wide 403 for undeployed .txt paths'
+  - id: oauth2-rfc8414-discovery
+    conforms: false
+    evidence: '/.well-known/oauth-authorization-server 404'
+  - id: oidc-discovery
+    conforms: false
+    evidence: '/.well-known/openid-configuration 404'
+  - id: a2a-agent-card
+    conforms: false
+    evidence: '/.well-known/agent-card.json and /.well-known/agent.json both 404'
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: 'not applicable - API Stack publishes no API contract to inspect'
+  - id: openapi
+    conforms: false
+    evidence: >-
+      no OpenAPI at any candidate path on www.apistack.io or apistack.io
+      (/openapi.json, /openapi.yaml, /swagger.json, /v1/openapi.json, /api-docs,
+      /docs, /redoc, /api/openapi.json, /api/swagger.json all miss)
+  - id: wsdl
+    conforms: false
+    evidence: '?wsdl and ?singleWsdl return the site HTML, not wsdl:definitions'
+contract_discovery:
+  ran: '2026-09-02'
+  outcome: >-
+    One machine-readable endpoint exists on the API Stack host, and it is NOT API Stack's
+    API. It is recorded here as evidence rather than saved as an api-stack contract.
+  finding:
+    endpoint: https://www.apistack.io/api/graphql
+    method: 'POST {"query":"{__schema{queryType{name}}}"}'
+    http_status: 200
+    introspection: open
+    schema_size: '308 types, Query with 66 fields, Mutation with 109 fields'
+    ownership_verdict: not-api-stack
+    ownership_reasoning: >-
+      Judged by what the schema says about itself, not by where it was fetched. The type
+      set is the Apideck platform - UnifyAccount, Connection, Consumer, Vault Session,
+      UnifiedApi, Webhook, Application, TargetFieldMapping - alongside the Apideck
+      Ecosystem marketplace types (Marketplace, Listing, Partner, Collection, Product).
+      apistack.io is itself a tenant of Apideck Ecosystem ("powered by Apideck"), so this
+      is the multi-tenant platform backend answering under the tenant's Next.js /api route,
+      exactly the shared-codebase case STEP 0c warns about. Saving it here would credit the
+      API Stack directory with Apideck's platform API. Its correct home is all/apideck.
+    also_seen:
+      - endpoint: https://www.apistack.io/api/get-services
+        http_status: 200
+        note: >-
+          Thin Next.js proxy that returns catalog.apideck.com/api/cloud-services verbatim
+          (18,247 services, Apideck's own links[] in the payload). Apideck's catalog API,
+          not API Stack's.
+    robots: 'both /api routes are Disallow: /api in https://www.apistack.io/robots.txt'
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com

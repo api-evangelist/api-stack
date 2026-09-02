@@ -1,0 +1,84 @@
+generated: '2026-09-02'
+method: probed
+source: live HTTPS probes of every host named in apis.yml (www.apistack.io, apistack.io)
+note: >-
+  Every named /.well-known/ path was probed on both API Stack hosts and every one missed.
+  NO WellKnown and NO SecurityTxt pointer is emitted in apis.yml, because this file documents
+  an absence, not a served surface. Two host behaviours are worth recording so a future sweep
+  does not misread them: (1) the apex apistack.io 308-redirects every path to www.apistack.io,
+  so only the www host carries real results; (2) the Vercel edge in front of www.apistack.io
+  answers 403 "Forbidden" for ANY .txt path that does not exist as a deployed static file --
+  /llms.txt, /.well-known/security.txt and a randomly-named control path all returned an
+  identical 59-byte 403 body, while the genuinely-deployed /robots.txt returned 200. That 403
+  is therefore a not-found, not a bot challenge and not a served document.
+hit_count: 0
+path_echo_control: passed
+soft_404_control:
+  path: /.well-known/api-stack-negative-control-7f3ab91c.json
+  status: 404
+  bytes: 136406
+  verdict: >-
+    Host returns a real Next.js 404 page for unknown /.well-known/ JSON paths. Not a
+    catch-all 200, so the 404s recorded below are trustworthy negatives.
+txt_403_control:
+  path: /nonexistent-random-7f3ab.txt
+  status: 403
+  bytes: 59
+  verdict: >-
+    Identical 403 body to /llms.txt and /.well-known/security.txt. The edge blocks all
+    undeployed .txt paths, so those two 403s are misses, not gated documents.
+hosts:
+  - host: https://www.apistack.io
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog.json
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/ucp.json
+        status: 404
+        file: null
+      - path: /.well-known/acp.json
+        status: 404
+        file: null
+      - path: /.well-known/aauth-resource.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+  - host: https://apistack.io
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 308
+        file: null
+        note: 308 redirect to https://www.apistack.io/ - apex is not an independent surface
+      - path: /.well-known/agent.json
+        status: 308
+        file: null
+        note: 308 redirect to https://www.apistack.io/ - apex is not an independent surface
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com

@@ -1,11 +1,17 @@
 aid: api-stack
 name: API Stack
 description: >-
-  API Stack is a free directory and discovery platform powered by Apideck that
-  catalogs 213+ third-party API tools and services across 50+ categories
-  including API gateways, management, design, authentication, developer portals,
-  specifications, testing, security, monitoring, and marketplaces, helping
-  developers discover and evaluate the right API tooling for their needs.
+  API Stack is a free, public directory and discovery platform for third-party API tooling,
+  built and operated by Apideck B.V. as a tenant of its own Apideck Ecosystem marketplace
+  platform. It catalogs 213 API tools and services across 46 published category pages
+  spanning the whole API lifecycle: gateways, management, design, authentication, developer
+  portals, documentation, specifications, testing, mocking, security, monitoring, analytics,
+  billing, frameworks, linters and directories, with per-tool listing pages carrying
+  descriptions, screenshots and outbound links so developers can shortlist and compare
+  tooling. API Stack is a discovery surface rather than an API product: it publishes no
+  developer portal, API reference, machine-readable contract, SDK, pricing page or terms of
+  service of its own, and sits alongside Apideck's API Tracker, Open Banking Tracker and
+  SaaS Blocks properties.
 type: Index
 deliveryModel:
   model: unknown
@@ -47,7 +53,7 @@ tags:
 url: >-
   https://raw.githubusercontent.com/api-evangelist/api-stack/refs/heads/main/apis.yml
 created: '2025-01-08'
-modified: '2026-04-19'
+modified: '2026-09-02'
 specificationVersion: '0.23'
 apis:
   - aid: api-stack:api-stack-directory
@@ -64,15 +70,27 @@ apis:
       - API Tools
       - Developer Tools
     properties:
-      - type: Documentation
-        url: https://www.apistack.io/
       - type: Categories
         url: https://www.apistack.io/categories/all
+      - type: Listings
+        url: https://www.apistack.io/all
 common:
   - type: DomainSecurity
     url: security/api-stack-domain-security.yml
-  - type: GitHubOrganization
-    url: https://github.com/api-stack
+  - type: Conformance
+    url: conformance/api-stack-conformance.yml
+  - type: WellKnownProbe
+    url: well-known/api-stack-well-known.yml
+  - type: Packages
+    url: packages/api-stack-packages.yml
+  - type: LLMsTxt
+    url: llms/api-stack-llms.txt
+  - type: PrivacyPolicy
+    url: https://compliance.apideck.com/privacy-policy
+  - type: SignUp
+    url: https://www.apistack.io/partner/request
+  - type: Login
+    url: https://www.apistack.io/partner/login
   - type: Website
     url: https://www.apistack.io/
   - type: Categories
@@ -85,7 +103,7 @@ common:
     url: https://www.apistack.io/category/api-design
   - type: APIAuthentication
     url: https://www.apistack.io/category/api-authentication
-  - type: Documentation
+  - type: DeveloperDocumentationCategory
     url: https://www.apistack.io/category/developer-documentation
   - type: APIDirectories
     url: https://www.apistack.io/category/directories
@@ -118,3 +136,33 @@ common:
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
+x-enrichment:
+  date: '2026-09-02'
+  status: minimal
+  artifacts_added: 4
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    apistack.io is a 213-listing directory website with no developer surface of its own —
+    /docs, /api-docs and /pricing all return 404, the 268-URL sitemap contains no developer,
+    reference or pricing page, and no /.well-known/ document is served; the one
+    machine-readable endpoint on the host, /api/graphql, is the Apideck Ecosystem platform
+    backend that apistack.io runs on as a tenant (its schema is Marketplace/Listing/Partner
+    plus Unify/Vault/Connection types), is disallowed in robots.txt, and is therefore
+    catalogued under Apideck rather than credited to API Stack.
+  evidence:
+    - url: https://www.apistack.io/docs
+      status: 404
+    - url: https://www.apistack.io/api-docs
+      status: 404
+    - url: https://www.apistack.io/pricing
+      status: 404
+    - url: https://www.apistack.io/.well-known/api-catalog
+      status: 404
+    - url: https://www.apistack.io/sitemap.xml
+      status: 200
+    - url: https://www.apistack.io/api/graphql
+      status: 200
+  checked: '2026-09-02'
