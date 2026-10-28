@@ -1,4 +1,4 @@
-# API Stack (api-stack)
+# API Stack
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,71 +64,103 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-API Stack is a free directory and discovery platform powered by Apideck that catalogs 213+ third-party API tools and services across 50+ categories including API gateways, management, design, authentication, developer portals, specifications, testing, security, monitoring, and marketplaces, helping developers discover and evaluate the right API tooling for their needs.
+API Stack is a free, public directory and discovery platform for third-party API tooling, built and operated by Apideck B.V. as a tenant of its own Apideck Ecosystem marketplace platform. It catalogs 213 API tools and services across 46 published category pages spanning the whole API lifecycle: gateways, management, design, authentication, developer portals, documentation, specifications, testing, mocking, security, monitoring, analytics, billing, frameworks, linters and directories, with per-tool listing pages carrying descriptions, screenshots and outbound links so developers can shortlist and compare tooling. API Stack is a discovery surface rather than an API product: it publishes no developer portal, API reference, machine-readable contract, SDK, pricing page or terms of service of its own, and sits alongside Apideck's API Tracker, Open Banking Tracker and SaaS Blocks properties.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/api-stack/refs/heads/main/apis.yml)
+**Areas:** API Design · API Directory · API Gateways · API Management · API Monitoring · API Security · API Testing · API Tools · Apideck · Developer Tools · Directory · Discovery
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## API Stack on APIs.io
 
-## Tags:
+Everything profiled for API Stack is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/api-stack/](https://apis.io/providers/api-stack/)** — or go straight to one of the APIs or properties below.
 
- - API Design, API Directory, API Gateways, API Management, API Monitoring, API Security, API Testing, API Tools, Apideck, Developer Tools, Directory, Discovery
+### APIs (1)
 
-## Timestamps
+- [API Stack Directory](https://apis.io/apis/api-stack/api-stack-directory/) — The API Stack Directory is a searchable catalog of 213+ API tools and services organized into 50+ categories. Each listing includes descriptions, features,…
 
-- **Created:** 2025-01-08
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### API Stack Directory
-The API Stack Directory is a searchable catalog of 213+ API tools and services organized into 50+ categories. Each listing includes descriptions, features, pricing, screenshots, and external links to help developers evaluate and select the right tools for their API programs.
+#### Security (1)
 
-**Human URL:** [https://www.apistack.io/](https://www.apistack.io/)
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Tags:
+- [Api Stack Domain Security](https://apis.io/security/api-stack/api-stack-domain-security/)
 
- - API Directory, API Discovery, API Tools, Developer Tools
+#### Plans and pricing (1)
 
-#### Properties
+Published plans, tiers and prices.
 
-- [Documentation](https://www.apistack.io/)
-- [Categories](https://www.apistack.io/categories/all)
+- [Api Stack Plans Pricing](https://apis.io/plans/api-stack/api-stack-plans-pricing/)
 
-## Common Properties
+#### Rate limits (1)
+
+Published request limits.
+
+- [Api Stack Rate Limits](https://apis.io/rate-limits/api-stack/api-stack-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Api Stack Finops](https://apis.io/finops/api-stack/api-stack-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.apistack.io/)
-- [Categories](https://www.apistack.io/categories/all)
-- [APIGateways](https://www.apistack.io/category/api-gateways)
-- [APIManagement](https://www.apistack.io/category/api-management)
-- [APIDesign](https://www.apistack.io/category/api-design)
-- [APIAuthentication](https://www.apistack.io/category/api-authentication)
-- [DeveloperDocumentation](https://www.apistack.io/category/developer-documentation)
-- [APIDirectories](https://www.apistack.io/category/directories)
-- [APISpecifications](https://www.apistack.io/category/api-specifications)
+- [Sign up](https://www.apistack.io/partner/request)
+- [Privacy policy](https://compliance.apideck.com/privacy-policy)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| 213+ Tools Catalog | Comprehensive listing of API tools and services across 50+ categories with descriptions, features, and pricing. |
-| Category Browsing | Organized categories for browsing by API lifecycle stage including design, development, testing, security, and monitoring. |
-| Search and Discovery | Full-text search to find specific API tools matching developer requirements. |
-| Tool Comparison | Detailed listing pages with features, pricing, and screenshots to help compare similar tools. |
-| Powered by Apideck | Built and maintained by Apideck as part of the broader API ecosystem alongside API Tracker and Open Banking Tracker. |
+**Kin Score 12.6** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 0.0 |
+| Access clarity | 23.7 |
 
-| Name | Description |
-|------|-------------|
-| API Tooling Discovery | Developers and architects find and evaluate API tools across all stages of the API lifecycle. |
-| API Gateway Selection | Compare API gateway options from open source to enterprise to find the right solution for infrastructure needs. |
-| API Security Tool Research | Discover API security testing, authentication, and monitoring tools for securing API programs. |
-| API Design Tool Evaluation | Explore API design tools, editors, and specification validators to improve API development workflows. |
-| Developer Portal Platforms | Research developer portal platforms and documentation tools for publishing API programs. |
+**Agent readiness 2.5** — human-only
 
-## Maintainers
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-**FN:** Kin Lane
+**Regulatory alignment 14.7** — Horizontal (data, software, accessibility, platform)
 
-**Email:** info@apievangelist.com
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/api-stack/](https://apis.io/providers/api-stack/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for API Stack: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/api-stack/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
